@@ -246,11 +246,13 @@ def main():
 
 
 def terminate():
+    """ Quits the game"""
     pygame.quit()
     sys.exit()
 
 
 def checkForQuit():
+    """ Checks for press and release of ESC key. Quits game."""
     for event in pygame.event.get(QUIT):
         terminate()
     for event in pygame.event.get(KEYUP):
@@ -266,7 +268,7 @@ def getLeftTopOfTile(tileX, tileY):
 
 
 def getStartingBoard(state=3):
-    # Returns the board data structure with tiles in it
+    """Returns the board data structure with tiles in it"""
 
     board = []
     for x in range(BOARDWIDTH):
@@ -280,7 +282,7 @@ def getStartingBoard(state=3):
 
 
 def hasWon(board, playerwon=-1):
-    # checks for winning player
+    """checks for winning player"""
     color1 = LIGHTBGCOLOR
     color2 = BGCOLOR
     if board[BOARDWIDTH - int(BOARDWIDTH / 2) - 1][0] == 1 or playerwon == 1:
